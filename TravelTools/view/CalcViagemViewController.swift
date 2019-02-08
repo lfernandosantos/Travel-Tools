@@ -14,6 +14,12 @@ class CalcViagemViewController: UIViewController {
     @IBOutlet weak var valueTF: UITextField!
     @IBOutlet weak var calcBTN: UIButton!
     @IBOutlet weak var resultLBL: UILabel!
+    @IBOutlet weak var declaradoSWT: UISwitch!
+    @IBOutlet weak var tipoPagamento: UISegmentedControl!
+    @IBOutlet weak var valorExcedenteLBL: UILabel!
+    @IBOutlet weak var totalExcedenteLBL: UILabel!
+
+    let calcViewModel = CalcViagemViewModel()
 
 
     override func viewDidLoad() {
@@ -21,15 +27,25 @@ class CalcViagemViewController: UIViewController {
 
     }
 
+
     @IBAction func calcValue(_ sender: Any) {
-        guard let valor = valueTF.text, !valor.isEmpty, let doubleValue = Double(valueTF.text!) else {
+        guard let valor = valueTF.text, !valor.isEmpty else {
             print("Verifique o valor digitado!")
             return
         }
 
-        let iof = CalculoPagamento.calcIOF(valor: doubleValue , tipoPagamento: .dinheiro)
-        let resultado = doubleValue + iof
-        resultLBL.text = "\(resultado)"
+        if (tipoPagamento.selectedSegmentIndex == 1) {
+            calcViewModel.tipoPagamento = .cartao
+        } else {
+            calcViewModel.tipoPagamento = .dinheiro
+        }
+        
+        calcViewModel.setValor(valor)
+        calcViewModel.declarado = declaradoSWT.isOn
+        resultLBL.text = calcViewModel.getResult()
+        valorExcedenteLBL.text = calcViewModel.getExcedente()
+        totalExcedenteLBL.text = calcViewModel.getTotalExcedente()
+
     }
 
 }

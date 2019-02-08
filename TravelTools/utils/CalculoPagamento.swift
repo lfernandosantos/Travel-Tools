@@ -15,8 +15,8 @@ enum TipoPagamento: Double {
 
 class CalculoPagamento {
 
-    //retorna iof em dolar
-    static func calcIOF(valor: Double, tipoPagamento: TipoPagamento) -> Double {
+
+    static func calcIOF(valor: Double, _ tipoPagamento: TipoPagamento) -> Double {
         let iof = valor * tipoPagamento.rawValue / 100
         return iof
     }
