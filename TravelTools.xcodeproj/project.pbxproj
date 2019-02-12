@@ -14,6 +14,7 @@
 		BE0C1485220BDB78007E4291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0C1483220BDB78007E4291 /* LaunchScreen.storyboard */; };
 		BE0C148E220BDC9A007E4291 /* CalculoPagamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0C148D220BDC9A007E4291 /* CalculoPagamento.swift */; };
 		BE0C1491220BE20D007E4291 /* CalcViagemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0C1490220BE20D007E4291 /* CalcViagemViewModel.swift */; };
+		BE207D002212507500ECE169 /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE207CFF2212507500ECE169 /* ViewControllerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BE0C1486220BDB78007E4291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0C148D220BDC9A007E4291 /* CalculoPagamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculoPagamento.swift; sourceTree = "<group>"; };
 		BE0C1490220BE20D007E4291 /* CalcViagemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViagemViewModel.swift; sourceTree = "<group>"; };
+		BE207CFF2212507500ECE169 /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				BE0C147C220BDB75007E4291 /* CalcViagemViewController.swift */,
+				BE207CFF2212507500ECE169 /* ViewControllerProtocol.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				BE0C1491220BE20D007E4291 /* CalcViagemViewModel.swift in Sources */,
 				BE0C147D220BDB75007E4291 /* CalcViagemViewController.swift in Sources */,
 				BE0C148E220BDC9A007E4291 /* CalculoPagamento.swift in Sources */,
+				BE207D002212507500ECE169 /* ViewControllerProtocol.swift in Sources */,
 				BE0C147B220BDB75007E4291 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

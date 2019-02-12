@@ -25,8 +25,10 @@ class CalcViagemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    }
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
 
+    }
 
     @IBAction func calcValue(_ sender: Any) {
         guard let valor = valueTF.text, !valor.isEmpty else {
@@ -42,11 +44,30 @@ class CalcViagemViewController: UIViewController {
         
         calcViewModel.setValor(valor)
         calcViewModel.declarado = declaradoSWT.isOn
-        resultLBL.text = calcViewModel.getResult()
-        valorExcedenteLBL.text = calcViewModel.getExcedente()
-        totalExcedenteLBL.text = calcViewModel.getTotalExcedente()
 
     }
 
+    func updateFields() {
+        resultLBL.text = calcViewModel.getResult()
+        valorExcedenteLBL.text = calcViewModel.getExcedente()
+        totalExcedenteLBL.text = calcViewModel.getTotalExcedente()
+    }
+
+}
+
+extension CalcViagemViewController: ViewControllerProtocol {
+
+
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                                 action: #selector(CalcViagemViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
