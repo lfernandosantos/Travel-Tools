@@ -10,17 +10,21 @@ import UIKit
 
 class CalcViagemViewController: UIViewController {
 
-
+    @IBOutlet weak var stackTax: UIStackView!
+    @IBOutlet weak var iofLBL: UILabel!
+    @IBOutlet weak var excedenteLBL: UILabel!
+    @IBOutlet weak var totalDeclaradoLBL: UILabel!
+    @IBOutlet weak var totalNdeclaradoCTxLBL: UILabel!
+    @IBOutlet weak var valorTotalLBL: UILabel!
+    @IBOutlet weak var taxaCambioTF: UITextField!
     @IBOutlet weak var valueTF: UITextField!
-    @IBOutlet weak var calcBTN: UIButton!
-    @IBOutlet weak var resultLBL: UILabel!
-    @IBOutlet weak var declaradoSWT: UISwitch!
     @IBOutlet weak var tipoPagamento: UISegmentedControl!
-    @IBOutlet weak var valorExcedenteLBL: UILabel!
-    @IBOutlet weak var totalExcedenteLBL: UILabel!
 
-    let calcViewModel = CalcViagemViewModel()
+    @IBOutlet weak var tipoMoedaSegControl: PaymentSegControl!
 
+    var taxCambio: Double = 0.0
+
+    var travalCalcViewModel = TravelCalcViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,35 +32,67 @@ class CalcViagemViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
 
+        tipoMoedaSegControl.segDelegate = self
+
+        tipoPagamento.addTarget(self, action: #selector(self.calcValue(_:)), for: UIControl.Event.valueChanged)
+
+        stackTax.addBackground(color: .orange)
+
+
+
     }
 
+    
+
+    @IBAction func convertValue(_ sender: Any) {
+        if let text = taxaCambioTF.text {
+            if text.doubleValue > 0 {
+                taxCambio = text.doubleValue
+                tipoMoedaSegControl.segmentControl.selectedSegmentIndex = 1
+                tipoMoedaSegControl.updateSegBar()
+                calcTravel()
+            }
+        }
+    }
+
+    
     @IBAction func calcValue(_ sender: Any) {
+        calcTravel()
+    }
+
+    func calcTravel() {
+
+        let tpPagamento = TipoPagamento.fromHashValue(hashValue: tipoPagamento.selectedSegmentIndex)
+
         guard let valor = valueTF.text, !valor.isEmpty else {
             print("Verifique o valor digitado!")
             return
         }
 
-        if (tipoPagamento.selectedSegmentIndex == 1) {
-            calcViewModel.tipoPagamento = .cartao
-        } else {
-            calcViewModel.tipoPagamento = .dinheiro
+
+        travalCalcViewModel.calculate(value: valor, tipoPagamento: tpPagamento) {
+
+            if self.tipoMoedaSegControl.segmentControl.selectedSegmentIndex == 0 {
+
+                self.iofLBL.text = self.travalCalcViewModel.iof.toString
+                self.excedenteLBL.text = self.travalCalcViewModel.excedente.toString
+                self.totalDeclaradoLBL.text = self.travalCalcViewModel.declarado.toString
+                self.totalNdeclaradoCTxLBL.text = self.travalCalcViewModel.nDeclarado.toString
+                self.valorTotalLBL.text = self.travalCalcViewModel.total.toString
+
+            } else {
+
+                self.iofLBL.text = (self.travalCalcViewModel.iof * self.taxCambio).toString
+                self.excedenteLBL.text = (self.travalCalcViewModel.excedente * self.taxCambio).toString
+                self.totalDeclaradoLBL.text = (self.travalCalcViewModel.declarado * self.taxCambio).toString
+                self.totalNdeclaradoCTxLBL.text = (self.travalCalcViewModel.nDeclarado * self.taxCambio).toString
+                self.valorTotalLBL.text = (self.travalCalcViewModel.total * self.taxCambio).toString
+            }
         }
-        
-        calcViewModel.setValor(valor)
-        calcViewModel.declarado = declaradoSWT.isOn
-
     }
-
-    func updateFields() {
-        resultLBL.text = calcViewModel.getResult()
-        valorExcedenteLBL.text = calcViewModel.getExcedente()
-        totalExcedenteLBL.text = calcViewModel.getTotalExcedente()
-    }
-
 }
 
-extension CalcViagemViewController: ViewControllerProtocol {
-
+extension CalcViagemViewController {
 
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
@@ -71,3 +107,36 @@ extension CalcViagemViewController: ViewControllerProtocol {
     }
 }
 
+
+extension CalcViagemViewController: MoedaSegControlDelegate {
+    func segPressed(id: Int, title: String?) {
+        calcTravel()
+    }
+}
+
+extension String {
+    static let numberFormatter = NumberFormatter()
+    var doubleValue: Double {
+        String.numberFormatter.decimalSeparator = "."
+        if let result =  String.numberFormatter.number(from: self) {
+            return result.doubleValue
+        } else {
+            String.numberFormatter.decimalSeparator = ","
+            if let result = String.numberFormatter.number(from: self) {
+                return result.doubleValue
+            }
+        }
+        return 0
+    }
+}
+
+extension UIStackView {
+
+    func addBackground(color: UIColor) {
+        let subview = UIView(frame: bounds)
+        subview.backgroundColor = color
+        subview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        insertSubview(subview, at: 0)
+    }
+
+}
