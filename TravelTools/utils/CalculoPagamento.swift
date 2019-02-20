@@ -11,7 +11,16 @@ import Foundation
 enum TipoPagamento: Double {
     case dinheiro   = 1.1
     case cartao     = 6.38
+
+    static func fromHashValue(hashValue: Int) -> TipoPagamento {
+        if hashValue == 0 {
+            return .dinheiro
+        } else {
+            return .cartao
+        }
+    }
 }
+
 
 class CalculoPagamento {
 
@@ -28,4 +37,5 @@ class CalculoPagamento {
         }
         return false
     }
+
 }
