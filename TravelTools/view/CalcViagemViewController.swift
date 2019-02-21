@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalcViagemViewController: UIViewController {
+class CalcViagemViewController: BaseViewController {
 
     @IBOutlet weak var stackTax: UIStackView!
     @IBOutlet weak var iofLBL: UILabel!
@@ -29,20 +29,12 @@ class CalcViagemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
-
         tipoMoedaSegControl.segDelegate = self
-
         tipoPagamento.addTarget(self, action: #selector(self.calcValue(_:)), for: UIControl.Event.valueChanged)
-
         stackTax.addBackground(color: .orange)
-
-
 
     }
 
-    
 
     @IBAction func convertValue(_ sender: Any) {
         if let text = taxaCambioTF.text {
@@ -55,7 +47,7 @@ class CalcViagemViewController: UIViewController {
         }
     }
 
-    
+
     @IBAction func calcValue(_ sender: Any) {
         calcTravel()
     }
@@ -68,7 +60,6 @@ class CalcViagemViewController: UIViewController {
             print("Verifique o valor digitado!")
             return
         }
-
 
         travalCalcViewModel.calculate(value: valor, tipoPagamento: tpPagamento) {
 
@@ -92,51 +83,8 @@ class CalcViagemViewController: UIViewController {
     }
 }
 
-extension CalcViagemViewController {
-
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
-                                                                 action: #selector(CalcViagemViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-
-
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
-
-
 extension CalcViagemViewController: MoedaSegControlDelegate {
     func segPressed(id: Int, title: String?) {
         calcTravel()
     }
-}
-
-extension String {
-    static let numberFormatter = NumberFormatter()
-    var doubleValue: Double {
-        String.numberFormatter.decimalSeparator = "."
-        if let result =  String.numberFormatter.number(from: self) {
-            return result.doubleValue
-        } else {
-            String.numberFormatter.decimalSeparator = ","
-            if let result = String.numberFormatter.number(from: self) {
-                return result.doubleValue
-            }
-        }
-        return 0
-    }
-}
-
-extension UIStackView {
-
-    func addBackground(color: UIColor) {
-        let subview = UIView(frame: bounds)
-        subview.backgroundColor = color
-        subview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        insertSubview(subview, at: 0)
-    }
-
 }

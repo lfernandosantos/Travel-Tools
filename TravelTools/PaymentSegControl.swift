@@ -49,7 +49,6 @@ class PaymentSegControl: UIView, SegueControlProtocol {
         insertSegment(index: 1, title: "Real")
 
         segmentControl.selectedSegmentIndex = 0
-
         setBottomBar()
 
         segmentControl.addTarget(self, action: #selector(self.segmentedControlValueChanged(_:)), for: UIControl.Event.valueChanged)

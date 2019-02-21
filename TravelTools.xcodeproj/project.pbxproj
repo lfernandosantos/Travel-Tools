@@ -16,6 +16,8 @@
 		BE314B3B2218EAD4006FE4D9 /* PaymentSegControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE314B3A2218EAD4006FE4D9 /* PaymentSegControl.xib */; };
 		BE314B61221A4868006FE4D9 /* PaymentSegControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE314B60221A4868006FE4D9 /* PaymentSegControl.swift */; };
 		BE314B63221CEFBC006FE4D9 /* TravelCalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE314B62221CEFBC006FE4D9 /* TravelCalcViewModel.swift */; };
+		BE314B65221F2A89006FE4D9 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE314B64221F2A89006FE4D9 /* BaseController.swift */; };
+		BE314B67221F311E006FE4D9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE314B66221F311E006FE4D9 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		BE314B3A2218EAD4006FE4D9 /* PaymentSegControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentSegControl.xib; sourceTree = "<group>"; };
 		BE314B60221A4868006FE4D9 /* PaymentSegControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSegControl.swift; sourceTree = "<group>"; };
 		BE314B62221CEFBC006FE4D9 /* TravelCalcViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCalcViewModel.swift; sourceTree = "<group>"; };
+		BE314B64221F2A89006FE4D9 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		BE314B66221F311E006FE4D9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				BE0C148D220BDC9A007E4291 /* CalculoPagamento.swift */,
+				BE314B66221F311E006FE4D9 /* Extensions.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -88,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				BE0C147C220BDB75007E4291 /* CalcViagemViewController.swift */,
+				BE314B64221F2A89006FE4D9 /* BaseController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -176,7 +182,9 @@
 				BE314B61221A4868006FE4D9 /* PaymentSegControl.swift in Sources */,
 				BE0C147D220BDB75007E4291 /* CalcViagemViewController.swift in Sources */,
 				BE0C148E220BDC9A007E4291 /* CalculoPagamento.swift in Sources */,
+				BE314B65221F2A89006FE4D9 /* BaseController.swift in Sources */,
 				BE0C147B220BDB75007E4291 /* AppDelegate.swift in Sources */,
+				BE314B67221F311E006FE4D9 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
