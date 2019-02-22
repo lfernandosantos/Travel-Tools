@@ -23,6 +23,8 @@ class CalcViagemViewController: BaseViewController {
     @IBOutlet weak var tipoMoedaSegControl: PaymentSegControl!
 
     var taxCambio: Double = 0.0
+    var amtValue: Int = 0
+    var amtTx: Int = 0
 
     var travalCalcViewModel = TravelCalcViewModel()
 
@@ -34,6 +36,10 @@ class CalcViagemViewController: BaseViewController {
         stackTax.addBackground(color: .orange)
 
         tipoMoedaSegControl.setBounds(superView: self.view)
+        valueTF.delegate = self
+        valueTF.placeholder = updateAmount(0)
+        taxaCambioTF.delegate = self
+        taxaCambioTF.placeholder = updateAmount(1)
     }
 
 
@@ -52,6 +58,7 @@ class CalcViagemViewController: BaseViewController {
     @IBAction func calcValue(_ sender: Any) {
         calcTravel()
     }
+
 
     func calcTravel() {
 
@@ -87,5 +94,70 @@ class CalcViagemViewController: BaseViewController {
 extension CalcViagemViewController: MoedaSegControlDelegate {
     func segPressed(id: Int, title: String?) {
         calcTravel()
+    }
+}
+
+extension CalcViagemViewController: UITextFieldDelegate {
+
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == taxaCambioTF {
+            if let text = taxaCambioTF.text {
+                if text.doubleValue > 0 {
+                    taxCambio = text.doubleValue
+                    tipoMoedaSegControl.segmentControl.selectedSegmentIndex = 1
+                    tipoMoedaSegControl.updateSegBar()
+
+                }
+            }
+        }
+
+        calcTravel()
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        if textField == valueTF {
+
+            if let digit = Int(string) {
+                amtValue = amtValue * 10 + digit
+                textField.text = updateAmount(0)
+            }
+
+            if string == "" {
+                amtValue = amtValue/10
+                textField.text = updateAmount(0)
+            }
+        } else {
+            if let digit = Int(string) {
+                amtTx = amtTx * 10 + digit
+                textField.text = updateAmount(1)
+            }
+
+            if string == "" {
+                amtTx = amtTx/10
+                textField.text = updateAmount(1)
+            }
+        }
+
+        return false
+    }
+
+
+    func updateAmount(_ id: Int) -> String? {
+
+
+        let formatter  = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
+        formatter.currencyCode = "$"
+
+        var amount: Double = 0.0
+        if id == 0 {
+            amount = Double(amtValue/100) + Double(amtValue%100)/100
+        } else {
+            amount = Double(amtTx/100) + Double(amtTx%100)/100
+        }
+
+        return formatter.string(from: NSNumber(value: amount))
+
     }
 }

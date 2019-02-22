@@ -129,7 +129,7 @@
                                 </segments>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="R$ 00,00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cgJ-MA-XgQ">
-                                <rect key="frame" x="75" y="116" width="170" height="80"/>
+                                <rect key="frame" x="8" y="116" width="304" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="w8n-xQ-dPo"/>
                                 </constraints>
@@ -140,17 +140,17 @@
                                     <action selector="calcValue:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="RVB-dB-RXv"/>
                                 </connections>
                             </textField>
-                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-ql-1Gu">
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="4" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-ql-1Gu">
                                 <rect key="frame" x="0.0" y="212" width="320" height="26"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Câmbio" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzL-LT-Mk5" userLabel="Valor">
-                                        <rect key="frame" x="0.0" y="0.5" width="152" height="25.5"/>
+                                        <rect key="frame" x="0.0" y="0.5" width="158" height="25.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="R$ 00,00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qQL-6g-bDU">
-                                        <rect key="frame" x="168" y="0.0" width="152" height="26"/>
+                                        <rect key="frame" x="162" y="0.0" width="158" height="26"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -178,7 +178,9 @@
                             <constraint firstItem="mXQ-9M-p5U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="THB-CH-9HC"/>
                             <constraint firstItem="Ljx-lw-4Ta" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ehx-do-lVY"/>
                             <constraint firstItem="Ljx-lw-4Ta" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="fY0-Om-2V0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cgJ-MA-XgQ" secondAttribute="trailing" constant="8" id="gzR-JQ-5XK"/>
                             <constraint firstItem="sw5-ql-1Gu" firstAttribute="top" secondItem="cgJ-MA-XgQ" secondAttribute="bottom" constant="16" id="kOC-c6-V2I"/>
+                            <constraint firstItem="cgJ-MA-XgQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="lwP-5A-fA2"/>
                             <constraint firstItem="cgJ-MA-XgQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mf4-FW-osi"/>
                             <constraint firstItem="sw5-ql-1Gu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pWv-fr-Oh4"/>
                             <constraint firstItem="cCO-Zz-JhN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xWp-EK-AD2"/>
