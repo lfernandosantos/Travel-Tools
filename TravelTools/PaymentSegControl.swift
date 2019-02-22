@@ -24,6 +24,7 @@ class PaymentSegControl: UIView, SegueControlProtocol {
     var segDelegate: MoedaSegControlDelegate?
     @IBOutlet weak var segmentControl: UISegmentedControl!
     var buttonBar = UIView()
+    var view = UIView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,8 +37,14 @@ class PaymentSegControl: UIView, SegueControlProtocol {
     }
 
 
+    func setBounds(superView: UIView) {
+        view.frame.size.width = superView.bounds.width
+    }
+
+
     func commonInitialization() {
-        let view = Bundle.main.loadNibNamed("PaymentSegControl", owner: self, options: nil)!.first as! UIView
+        view = Bundle.main.loadNibNamed("PaymentSegControl", owner: self, options: nil)!.first as! UIView
+
         view.frame = self.bounds
         self.addSubview(view)
         updateConstraints()

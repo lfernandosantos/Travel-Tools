@@ -33,6 +33,7 @@ class CalcViagemViewController: BaseViewController {
         tipoPagamento.addTarget(self, action: #selector(self.calcValue(_:)), for: UIControl.Event.valueChanged)
         stackTax.addBackground(color: .orange)
 
+        tipoMoedaSegControl.setBounds(superView: self.view)
     }
 
 
