@@ -26,7 +26,7 @@ class CalcViagemViewController: BaseViewController {
     var amtValue: Int = 0
     var amtTx: Int = 0
 
-    var travalCalcViewModel = TravelCalcViewModel()
+    var travelCalcViewModel = TravelCalcViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,17 +40,17 @@ class CalcViagemViewController: BaseViewController {
         valueTF.placeholder = updateAmount(0)
         taxaCambioTF.delegate = self
         taxaCambioTF.placeholder = updateAmount(1)
+
+
     }
 
 
     @IBAction func convertValue(_ sender: Any) {
-        if let text = taxaCambioTF.text {
-            if text.doubleValue > 0 {
-                taxCambio = text.doubleValue
-                tipoMoedaSegControl.segmentControl.selectedSegmentIndex = 1
-                tipoMoedaSegControl.updateSegBar()
-                calcTravel()
-            }
+        if let text = taxaCambioTF.text , text.doubleValue > 0 {
+            taxCambio = text.doubleValue
+            tipoMoedaSegControl.segmentControl.selectedSegmentIndex = 1
+            tipoMoedaSegControl.updateSegBar()
+            calcTravel()
         }
     }
 
@@ -59,6 +59,12 @@ class CalcViagemViewController: BaseViewController {
         calcTravel()
     }
 
+    @IBAction func getUSDBrl(_ sender: Any) {
+        travelCalcViewModel.getUSDBRL { (usd) in
+             self.taxaCambioTF.text = usd
+            self.taxCambio = usd.doubleValue
+        }
+    }
 
     func calcTravel() {
 
@@ -69,33 +75,35 @@ class CalcViagemViewController: BaseViewController {
             return
         }
 
-        travalCalcViewModel.calculate(value: valor, tipoPagamento: tpPagamento) {
+        travelCalcViewModel.calculate(value: valor, tipoPagamento: tpPagamento) {
 
             if self.tipoMoedaSegControl.segmentControl.selectedSegmentIndex == 0 {
 
-                self.iofLBL.text = self.travalCalcViewModel.iof.toString
-                self.excedenteLBL.text = self.travalCalcViewModel.excedente.toString
-                self.totalDeclaradoLBL.text = self.travalCalcViewModel.declarado.toString
-                self.totalNdeclaradoCTxLBL.text = self.travalCalcViewModel.nDeclarado.toString
-                self.valorTotalLBL.text = self.travalCalcViewModel.total.toString
+                self.iofLBL.text = self.travelCalcViewModel.iof.toString
+                self.excedenteLBL.text = self.travelCalcViewModel.excedente.toString
+                self.totalDeclaradoLBL.text = self.travelCalcViewModel.declarado.toString
+                self.totalNdeclaradoCTxLBL.text = self.travelCalcViewModel.nDeclarado.toString
+                self.valorTotalLBL.text = self.travelCalcViewModel.total.toString
 
             } else {
 
-                self.iofLBL.text = (self.travalCalcViewModel.iof * self.taxCambio).toString
-                self.excedenteLBL.text = (self.travalCalcViewModel.excedente * self.taxCambio).toString
-                self.totalDeclaradoLBL.text = (self.travalCalcViewModel.declarado * self.taxCambio).toString
-                self.totalNdeclaradoCTxLBL.text = (self.travalCalcViewModel.nDeclarado * self.taxCambio).toString
-                self.valorTotalLBL.text = (self.travalCalcViewModel.total * self.taxCambio).toString
+                self.iofLBL.text = (self.travelCalcViewModel.iof * self.taxCambio).toString
+                self.excedenteLBL.text = (self.travelCalcViewModel.excedente * self.taxCambio).toString
+                self.totalDeclaradoLBL.text = (self.travelCalcViewModel.declarado * self.taxCambio).toString
+                self.totalNdeclaradoCTxLBL.text = (self.travelCalcViewModel.nDeclarado * self.taxCambio).toString
+                self.valorTotalLBL.text = (self.travelCalcViewModel.total * self.taxCambio).toString
             }
         }
     }
 }
+
 
 extension CalcViagemViewController: MoedaSegControlDelegate {
     func segPressed(id: Int, title: String?) {
         calcTravel()
     }
 }
+
 
 extension CalcViagemViewController: UITextFieldDelegate {
 
@@ -114,6 +122,8 @@ extension CalcViagemViewController: UITextFieldDelegate {
 
         calcTravel()
     }
+
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
         if textField == valueTF {
@@ -145,7 +155,6 @@ extension CalcViagemViewController: UITextFieldDelegate {
 
     func updateAmount(_ id: Int) -> String? {
 
-
         let formatter  = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         formatter.currencyCode = "$"
@@ -154,6 +163,7 @@ extension CalcViagemViewController: UITextFieldDelegate {
         if id == 0 {
             amount = Double(amtValue/100) + Double(amtValue%100)/100
         } else {
+            formatter.currencyCode = "$"
             amount = Double(amtTx/100) + Double(amtTx%100)/100
         }
 
