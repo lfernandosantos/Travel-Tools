@@ -33,11 +33,20 @@ extension TravelCalcViewModel {
 
         completion()
     }
-}
 
-
-extension Double {
-    var toString: String  {
-        return String(format:"%.2f", self)
+    func getUSDBRL(completion: @escaping (String) -> Void) {
+        CurrencyService().requestCurrency(endPoint: .live) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let usdBRL):
+                    completion(usdBRL.toString)
+                case .failure(_ ):
+                    completion(0.00.toString)
+                }
+            }
+        }
     }
 }
+
+
+
