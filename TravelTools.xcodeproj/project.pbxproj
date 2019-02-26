@@ -18,6 +18,9 @@
 		BE314B63221CEFBC006FE4D9 /* TravelCalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE314B62221CEFBC006FE4D9 /* TravelCalcViewModel.swift */; };
 		BE314B65221F2A89006FE4D9 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE314B64221F2A89006FE4D9 /* BaseController.swift */; };
 		BE314B67221F311E006FE4D9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE314B66221F311E006FE4D9 /* Extensions.swift */; };
+		BE76E0DC2222F06A00CEF757 /* CurrencyExchangeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE76E0DB2222F06A00CEF757 /* CurrencyExchangeAPI.swift */; };
+		BE76E0DE2222F07700CEF757 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE76E0DD2222F07700CEF757 /* BaseAPI.swift */; };
+		BE76E0E02222F4B500CEF757 /* BaseServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE76E0DF2222F4B500CEF757 /* BaseServiceAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		BE314B62221CEFBC006FE4D9 /* TravelCalcViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCalcViewModel.swift; sourceTree = "<group>"; };
 		BE314B64221F2A89006FE4D9 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		BE314B66221F311E006FE4D9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BE76E0DB2222F06A00CEF757 /* CurrencyExchangeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeAPI.swift; sourceTree = "<group>"; };
+		BE76E0DD2222F07700CEF757 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		BE76E0DF2222F4B500CEF757 /* BaseServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 		BE0C1479220BDB75007E4291 /* TravelTools */ = {
 			isa = PBXGroup;
 			children = (
+				BE76E0DA2222F03500CEF757 /* Service */,
 				BE0C1492220BE26E007E4291 /* viewModel */,
 				BE0C148F220BDCF3007E4291 /* view */,
 				BE0C148C220BDBB9007E4291 /* utils */,
@@ -104,6 +111,16 @@
 				BE314B62221CEFBC006FE4D9 /* TravelCalcViewModel.swift */,
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		BE76E0DA2222F03500CEF757 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BE76E0DB2222F06A00CEF757 /* CurrencyExchangeAPI.swift */,
+				BE76E0DD2222F07700CEF757 /* BaseAPI.swift */,
+				BE76E0DF2222F4B500CEF757 /* BaseServiceAPI.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,9 +196,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE314B63221CEFBC006FE4D9 /* TravelCalcViewModel.swift in Sources */,
+				BE76E0E02222F4B500CEF757 /* BaseServiceAPI.swift in Sources */,
 				BE314B61221A4868006FE4D9 /* PaymentSegControl.swift in Sources */,
 				BE0C147D220BDB75007E4291 /* CalcViagemViewController.swift in Sources */,
+				BE76E0DE2222F07700CEF757 /* BaseAPI.swift in Sources */,
 				BE0C148E220BDC9A007E4291 /* CalculoPagamento.swift in Sources */,
+				BE76E0DC2222F06A00CEF757 /* CurrencyExchangeAPI.swift in Sources */,
 				BE314B65221F2A89006FE4D9 /* BaseController.swift in Sources */,
 				BE0C147B220BDB75007E4291 /* AppDelegate.swift in Sources */,
 				BE314B67221F311E006FE4D9 /* Extensions.swift in Sources */,
