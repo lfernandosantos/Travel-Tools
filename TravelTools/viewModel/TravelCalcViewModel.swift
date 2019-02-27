@@ -20,16 +20,15 @@ class TravelCalcViewModel {
 extension TravelCalcViewModel {
 
     
-    func calculate(value: String, tipoPagamento: TipoPagamento, completion: @escaping () -> Void) {
+    func calculate(value: String, paymentType: PaymentType, completion: @escaping () -> Void) {
 
-        self.iof = CalculoPagamento.calcIOF(valor: value.doubleValue, tipoPagamento)
 
-        if (CalculoPagamento.excedeLimite(value.doubleValue)) {
-            excedente = (value.doubleValue - 500.0)
-        }
-        total = value.doubleValue + iof
-        nDeclarado = (total + excedente)
-        declarado = (total + (excedente / 2))
+        let paymentCalculation = PaymentCalculationModel(value: value.doubleValue,
+                                                         paymentType: paymentType)
+        total = paymentCalculation.getTotalValue()
+        nDeclarado = paymentCalculation.getTotalNotDeclared()
+        declarado = paymentCalculation.getTotalDeclared()
+        excedente = paymentCalculation.getOverLimitValue()
 
         completion()
     }

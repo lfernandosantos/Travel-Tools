@@ -68,14 +68,14 @@ class CalcViagemViewController: BaseViewController {
 
     func calcTravel() {
 
-        let tpPagamento = TipoPagamento.fromHashValue(hashValue: tipoPagamento.selectedSegmentIndex)
+        let tpPagamento = PaymentType.fromHashValue(hashValue: tipoPagamento.selectedSegmentIndex)
 
         guard let valor = valueTF.text, !valor.isEmpty else {
             print("Verifique o valor digitado!")
             return
         }
 
-        travelCalcViewModel.calculate(value: valor, tipoPagamento: tpPagamento) {
+        travelCalcViewModel.calculate(value: valor, paymentType: tpPagamento) {
 
             if self.tipoMoedaSegControl.segmentControl.selectedSegmentIndex == 0 {
 
