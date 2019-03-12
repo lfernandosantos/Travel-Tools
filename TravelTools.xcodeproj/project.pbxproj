@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE097CA822277CA800568196 /* TravelToolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE097CA722277CA800568196 /* TravelToolsUITests.swift */; };
+		BE097CB622277D0D00568196 /* TravelToolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE097CB522277D0D00568196 /* TravelToolsTests.swift */; };
 		BE0C147B220BDB75007E4291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0C147A220BDB75007E4291 /* AppDelegate.swift */; };
 		BE0C147D220BDB75007E4291 /* CalcViagemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0C147C220BDB75007E4291 /* CalcViagemViewController.swift */; };
 		BE0C1480220BDB75007E4291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0C147E220BDB75007E4291 /* Main.storyboard */; };
 		BE0C1482220BDB78007E4291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0C1481220BDB78007E4291 /* Assets.xcassets */; };
 		BE0C1485220BDB78007E4291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0C1483220BDB78007E4291 /* LaunchScreen.storyboard */; };
-		BE0C148E220BDC9A007E4291 /* CalculoPagamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0C148D220BDC9A007E4291 /* CalculoPagamento.swift */; };
+		BE2C485C2228574A00E0107C /* PaymentIofCalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2C485B2228574A00E0107C /* PaymentIofCalculationTests.swift */; };
 		BE314B3B2218EAD4006FE4D9 /* PaymentSegControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE314B3A2218EAD4006FE4D9 /* PaymentSegControl.xib */; };
 		BE314B61221A4868006FE4D9 /* PaymentSegControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE314B60221A4868006FE4D9 /* PaymentSegControl.swift */; };
 		BE314B63221CEFBC006FE4D9 /* TravelCalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE314B62221CEFBC006FE4D9 /* TravelCalcViewModel.swift */; };
@@ -21,9 +23,33 @@
 		BE76E0DC2222F06A00CEF757 /* CurrencyExchangeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE76E0DB2222F06A00CEF757 /* CurrencyExchangeAPI.swift */; };
 		BE76E0DE2222F07700CEF757 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE76E0DD2222F07700CEF757 /* BaseAPI.swift */; };
 		BE76E0E02222F4B500CEF757 /* BaseServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE76E0DF2222F4B500CEF757 /* BaseServiceAPI.swift */; };
+		BE9F11B02225BC60000C9CA7 /* PaymentCalculationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F11AF2225BC60000C9CA7 /* PaymentCalculationModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BE097CAA22277CA800568196 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE0C146F220BDB75007E4291 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE0C1476220BDB75007E4291;
+			remoteInfo = TravelTools;
+		};
+		BE097CB822277D0D00568196 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE0C146F220BDB75007E4291 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE0C1476220BDB75007E4291;
+			remoteInfo = TravelTools;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		BE097CA522277CA700568196 /* TravelToolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelToolsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE097CA722277CA800568196 /* TravelToolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelToolsUITests.swift; sourceTree = "<group>"; };
+		BE097CA922277CA800568196 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE097CB322277D0D00568196 /* TravelToolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelToolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE097CB522277D0D00568196 /* TravelToolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelToolsTests.swift; sourceTree = "<group>"; };
+		BE097CB722277D0D00568196 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0C1477220BDB75007E4291 /* TravelTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0C147A220BDB75007E4291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE0C147C220BDB75007E4291 /* CalcViagemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViagemViewController.swift; sourceTree = "<group>"; };
@@ -31,7 +57,7 @@
 		BE0C1481220BDB78007E4291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE0C1484220BDB78007E4291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE0C1486220BDB78007E4291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE0C148D220BDC9A007E4291 /* CalculoPagamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculoPagamento.swift; sourceTree = "<group>"; };
+		BE2C485B2228574A00E0107C /* PaymentIofCalculationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentIofCalculationTests.swift; sourceTree = "<group>"; };
 		BE314B3A2218EAD4006FE4D9 /* PaymentSegControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentSegControl.xib; sourceTree = "<group>"; };
 		BE314B60221A4868006FE4D9 /* PaymentSegControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSegControl.swift; sourceTree = "<group>"; };
 		BE314B62221CEFBC006FE4D9 /* TravelCalcViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCalcViewModel.swift; sourceTree = "<group>"; };
@@ -40,9 +66,24 @@
 		BE76E0DB2222F06A00CEF757 /* CurrencyExchangeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeAPI.swift; sourceTree = "<group>"; };
 		BE76E0DD2222F07700CEF757 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		BE76E0DF2222F4B500CEF757 /* BaseServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceAPI.swift; sourceTree = "<group>"; };
+		BE9F11AF2225BC60000C9CA7 /* PaymentCalculationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentCalculationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BE097CA222277CA700568196 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE097CB022277D0D00568196 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE0C1474220BDB75007E4291 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,10 +94,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE097CA622277CA700568196 /* TravelToolsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE097CA722277CA800568196 /* TravelToolsUITests.swift */,
+				BE097CA922277CA800568196 /* Info.plist */,
+			);
+			path = TravelToolsUITests;
+			sourceTree = "<group>";
+		};
+		BE097CB422277D0D00568196 /* TravelToolsTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE2C485B2228574A00E0107C /* PaymentIofCalculationTests.swift */,
+				BE097CB522277D0D00568196 /* TravelToolsTests.swift */,
+				BE097CB722277D0D00568196 /* Info.plist */,
+			);
+			path = TravelToolsTests;
+			sourceTree = "<group>";
+		};
 		BE0C146E220BDB75007E4291 = {
 			isa = PBXGroup;
 			children = (
 				BE0C1479220BDB75007E4291 /* TravelTools */,
+				BE097CA622277CA700568196 /* TravelToolsUITests */,
+				BE097CB422277D0D00568196 /* TravelToolsTests */,
 				BE0C1478220BDB75007E4291 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				BE0C1477220BDB75007E4291 /* TravelTools.app */,
+				BE097CA522277CA700568196 /* TravelToolsUITests.xctest */,
+				BE097CB322277D0D00568196 /* TravelToolsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,17 +136,13 @@
 		BE0C1479220BDB75007E4291 /* TravelTools */ = {
 			isa = PBXGroup;
 			children = (
+				BE0C1486220BDB78007E4291 /* Info.plist */,
+				BE13ED5B2226E2F3001BB631 /* Resource */,
 				BE76E0DA2222F03500CEF757 /* Service */,
 				BE0C1492220BE26E007E4291 /* viewModel */,
 				BE0C148F220BDCF3007E4291 /* view */,
 				BE0C148C220BDBB9007E4291 /* utils */,
 				BE0C147A220BDB75007E4291 /* AppDelegate.swift */,
-				BE314B60221A4868006FE4D9 /* PaymentSegControl.swift */,
-				BE0C147E220BDB75007E4291 /* Main.storyboard */,
-				BE0C1481220BDB78007E4291 /* Assets.xcassets */,
-				BE0C1483220BDB78007E4291 /* LaunchScreen.storyboard */,
-				BE0C1486220BDB78007E4291 /* Info.plist */,
-				BE314B3A2218EAD4006FE4D9 /* PaymentSegControl.xib */,
 			);
 			path = TravelTools;
 			sourceTree = "<group>";
@@ -90,7 +150,7 @@
 		BE0C148C220BDBB9007E4291 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				BE0C148D220BDC9A007E4291 /* CalculoPagamento.swift */,
+				BE9F11AF2225BC60000C9CA7 /* PaymentCalculationModel.swift */,
 				BE314B66221F311E006FE4D9 /* Extensions.swift */,
 			);
 			path = utils;
@@ -101,6 +161,7 @@
 			children = (
 				BE0C147C220BDB75007E4291 /* CalcViagemViewController.swift */,
 				BE314B64221F2A89006FE4D9 /* BaseController.swift */,
+				BE314B60221A4868006FE4D9 /* PaymentSegControl.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -111,6 +172,25 @@
 				BE314B62221CEFBC006FE4D9 /* TravelCalcViewModel.swift */,
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		BE13ED5B2226E2F3001BB631 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BE13ED5C2226E5FE001BB631 /* Storyboards */,
+				BE0C1481220BDB78007E4291 /* Assets.xcassets */,
+				BE314B3A2218EAD4006FE4D9 /* PaymentSegControl.xib */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		BE13ED5C2226E5FE001BB631 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BE0C147E220BDB75007E4291 /* Main.storyboard */,
+				BE0C1483220BDB78007E4291 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		BE76E0DA2222F03500CEF757 /* Service */ = {
@@ -126,6 +206,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BE097CA422277CA700568196 /* TravelToolsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE097CAC22277CA800568196 /* Build configuration list for PBXNativeTarget "TravelToolsUITests" */;
+			buildPhases = (
+				BE097CA122277CA700568196 /* Sources */,
+				BE097CA222277CA700568196 /* Frameworks */,
+				BE097CA322277CA700568196 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE097CAB22277CA800568196 /* PBXTargetDependency */,
+			);
+			name = TravelToolsUITests;
+			productName = TravelToolsUITests;
+			productReference = BE097CA522277CA700568196 /* TravelToolsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		BE097CB222277D0D00568196 /* TravelToolsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE097CBA22277D0D00568196 /* Build configuration list for PBXNativeTarget "TravelToolsTests" */;
+			buildPhases = (
+				BE097CAF22277D0D00568196 /* Sources */,
+				BE097CB022277D0D00568196 /* Frameworks */,
+				BE097CB122277D0D00568196 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE097CB922277D0D00568196 /* PBXTargetDependency */,
+			);
+			name = TravelToolsTests;
+			productName = TravelToolsTests;
+			productReference = BE097CB322277D0D00568196 /* TravelToolsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BE0C1476220BDB75007E4291 /* TravelTools */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE0C1489220BDB78007E4291 /* Build configuration list for PBXNativeTarget "TravelTools" */;
@@ -153,6 +269,14 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = LFSantos;
 				TargetAttributes = {
+					BE097CA422277CA700568196 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = BE0C1476220BDB75007E4291;
+					};
+					BE097CB222277D0D00568196 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = BE0C1476220BDB75007E4291;
+					};
 					BE0C1476220BDB75007E4291 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -172,11 +296,27 @@
 			projectRoot = "";
 			targets = (
 				BE0C1476220BDB75007E4291 /* TravelTools */,
+				BE097CA422277CA700568196 /* TravelToolsUITests */,
+				BE097CB222277D0D00568196 /* TravelToolsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BE097CA322277CA700568196 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE097CB122277D0D00568196 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE0C1475220BDB75007E4291 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -191,16 +331,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BE097CA122277CA700568196 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE097CA822277CA800568196 /* TravelToolsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE097CAF22277D0D00568196 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE2C485C2228574A00E0107C /* PaymentIofCalculationTests.swift in Sources */,
+				BE097CB622277D0D00568196 /* TravelToolsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE0C1473220BDB75007E4291 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BE314B63221CEFBC006FE4D9 /* TravelCalcViewModel.swift in Sources */,
 				BE76E0E02222F4B500CEF757 /* BaseServiceAPI.swift in Sources */,
+				BE9F11B02225BC60000C9CA7 /* PaymentCalculationModel.swift in Sources */,
 				BE314B61221A4868006FE4D9 /* PaymentSegControl.swift in Sources */,
 				BE0C147D220BDB75007E4291 /* CalcViagemViewController.swift in Sources */,
 				BE76E0DE2222F07700CEF757 /* BaseAPI.swift in Sources */,
-				BE0C148E220BDC9A007E4291 /* CalculoPagamento.swift in Sources */,
 				BE76E0DC2222F06A00CEF757 /* CurrencyExchangeAPI.swift in Sources */,
 				BE314B65221F2A89006FE4D9 /* BaseController.swift in Sources */,
 				BE0C147B220BDB75007E4291 /* AppDelegate.swift in Sources */,
@@ -209,6 +366,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE097CAB22277CA800568196 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE0C1476220BDB75007E4291 /* TravelTools */;
+			targetProxy = BE097CAA22277CA800568196 /* PBXContainerItemProxy */;
+		};
+		BE097CB922277D0D00568196 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE0C1476220BDB75007E4291 /* TravelTools */;
+			targetProxy = BE097CB822277D0D00568196 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BE0C147E220BDB75007E4291 /* Main.storyboard */ = {
@@ -230,6 +400,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BE097CAD22277CA800568196 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JQ52M4QL3U;
+				INFOPLIST_FILE = TravelToolsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.lf.TravelToolsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TravelTools;
+			};
+			name = Debug;
+		};
+		BE097CAE22277CA800568196 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JQ52M4QL3U;
+				INFOPLIST_FILE = TravelToolsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.lf.TravelToolsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TravelTools;
+			};
+			name = Release;
+		};
+		BE097CBB22277D0D00568196 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JQ52M4QL3U;
+				INFOPLIST_FILE = TravelToolsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.lf.TravelToolsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelTools.app/TravelTools";
+			};
+			name = Debug;
+		};
+		BE097CBC22277D0D00568196 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JQ52M4QL3U;
+				INFOPLIST_FILE = TravelToolsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.lf.TravelToolsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelTools.app/TravelTools";
+			};
+			name = Release;
+		};
 		BE0C1487220BDB78007E4291 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -385,6 +633,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BE097CAC22277CA800568196 /* Build configuration list for PBXNativeTarget "TravelToolsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE097CAD22277CA800568196 /* Debug */,
+				BE097CAE22277CA800568196 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE097CBA22277D0D00568196 /* Build configuration list for PBXNativeTarget "TravelToolsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE097CBB22277D0D00568196 /* Debug */,
+				BE097CBC22277D0D00568196 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BE0C1472220BDB75007E4291 /* Build configuration list for PBXProject "TravelTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
