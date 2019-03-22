@@ -20,7 +20,7 @@ class TravelCalcViewModel {
 extension TravelCalcViewModel {
 
     
-    func calculate(value: String, paymentType: PaymentType, completion: @escaping () -> Void) {
+    func calculate(value: String, paymentType: PaymentType, completion: @escaping (PaymentCalculationModel) -> Void) {
 
 
         let paymentCalculation = PaymentCalculationModel(value: value.doubleValue,
@@ -30,7 +30,7 @@ extension TravelCalcViewModel {
         declarado = paymentCalculation.getTotalDeclared()
         excedente = paymentCalculation.getOverLimitValue()
 
-        completion()
+        completion(paymentCalculation)
     }
 
     func getUSDBRL(completion: @escaping (String) -> Void) {
