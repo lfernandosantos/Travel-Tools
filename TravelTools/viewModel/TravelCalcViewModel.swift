@@ -20,24 +20,32 @@ class TravelCalcViewModel {
 extension TravelCalcViewModel {
 
     
-    func calculate(value: String, tipoPagamento: TipoPagamento, completion: @escaping () -> Void) {
+    func calculate(value: String, paymentType: PaymentType, completion: @escaping (PaymentCalculationModel) -> Void) {
 
-        self.iof = CalculoPagamento.calcIOF(valor: value.doubleValue, tipoPagamento)
 
-        if (CalculoPagamento.excedeLimite(value.doubleValue)) {
-            excedente = (value.doubleValue - 500.0)
+        let paymentCalculation = PaymentCalculationModel(value: value.doubleValue,
+                                                         paymentType: paymentType)
+        total = paymentCalculation.getTotalValue()
+        nDeclarado = paymentCalculation.getTotalNotDeclared()
+        declarado = paymentCalculation.getTotalDeclared()
+        excedente = paymentCalculation.getOverLimitValue()
+
+        completion(paymentCalculation)
+    }
+
+    func getUSDBRL(completion: @escaping (String) -> Void) {
+        CurrencyService().requestCurrency(endPoint: .live) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let usdBRL):
+                    completion(usdBRL.toString)
+                case .failure(_ ):
+                    completion(0.00.toString)
+                }
+            }
         }
-        total = value.doubleValue + iof
-        nDeclarado = (total + excedente)
-        declarado = (total + (excedente / 2))
-
-        completion()
     }
 }
 
 
-extension Double {
-    var toString: String  {
-        return String(format:"%.2f", self)
-    }
-}
+

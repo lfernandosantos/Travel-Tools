@@ -38,3 +38,11 @@ extension UIStackView {
     }
 
 }
+
+
+extension Double {
+    var toString: String  {
+        let formattedValue = String(format:"%.2f", self)
+        return formattedValue.replacingOccurrences(of: ".", with: ",")
+    }
+}

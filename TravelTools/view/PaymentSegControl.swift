@@ -9,19 +9,19 @@
 import Foundation
 import UIKit
 
-protocol MoedaSegControlDelegate {
+protocol CurrencySegControlDelegate {
     func segPressed(id: Int, title: String?)
 }
 
 
-protocol SegueControlProtocol {
-    var segDelegate: MoedaSegControlDelegate? { get set }
+protocol SegmentedControlProtocol {
+    var segDelegate: CurrencySegControlDelegate? { get set }
 }
 
 
-class PaymentSegControl: UIView, SegueControlProtocol {
+class PaymentSegControl: UIView, SegmentedControlProtocol {
 
-    var segDelegate: MoedaSegControlDelegate?
+    var segDelegate: CurrencySegControlDelegate?
     @IBOutlet weak var segmentControl: UISegmentedControl!
     var buttonBar = UIView()
     var view = UIView()
