@@ -55,7 +55,7 @@ class PaymentCalculationModel {
 
 
     func getTotalDeclared() -> Double {
-        return (getTotalValue() + (getOverLimitValue() / 2))
+        return (getTotalValue() + ((getOverLimitValue() / 2)))
     }
 
 
@@ -75,4 +75,8 @@ class PaymentCalculationModel {
         return false
     }
 
+}
+
+enum TypeTax {
+    case iof, overLimit, totalDeclared, totalNotDeclared
 }
